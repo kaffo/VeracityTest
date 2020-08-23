@@ -4,6 +4,8 @@ using System.Threading;
 using VeracityTest.Producers;
 using VeracityTest.Consumers;
 using VeracityTest.Data;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace VeracityTest
 {
@@ -18,9 +20,16 @@ namespace VeracityTest
                 return;
             }
 
-            Console.WriteLine("esc to quit early");
-
             FileInfo inputFile = new FileInfo(args[0]);
+            if (!inputFile.Exists)
+            {
+                Console.WriteLine($"File {inputFile.FullName} doesn't exist!");
+                Console.ReadLine();
+                return;
+            }
+
+            Console.WriteLine("control+c to quit early");
+
             int runLength = 10000;
             int delay = 500;
 
@@ -44,20 +53,13 @@ namespace VeracityTest
 
             producer.StartProducer(delay);
 
-            int curTime = 0;
-            while (curTime < runLength)
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            while (stopWatch.ElapsedMilliseconds < runLength)
             {
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo curKey = Console.ReadKey(true);
-                    if (curKey.Key == ConsoleKey.Escape)
-                    {
-                        break;
-                    }
-                }
-                curTime += 100;
-                Thread.Sleep(100);
+                Thread.Sleep(500);
             }
+            stopWatch.Stop();
             producer.StopProducer();
         }
     }

@@ -27,6 +27,14 @@ namespace VeracityTest.Producers
             _producerThread = new Thread(RunProducer);
         }
 
+        ~FileProducer()
+        {
+            if (_runThread == true)
+            {
+                StopProducer();
+            }
+        }
+
         private static void RunProducer(object obj)
         {
             int delay;
