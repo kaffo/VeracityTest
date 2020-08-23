@@ -7,7 +7,7 @@ namespace VeracityTest.Data
 {
     public delegate void ItemAddedEventHandler();
 
-    interface IDataQueue
+    public interface IDataQueue
     {
         void RegisterListener(ConsumerType consumerType, IConsumer consumer);
         bool AddItem(DataItem item);

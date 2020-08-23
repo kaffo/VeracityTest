@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeracityTest", "VeracityTest\VeracityTest.csproj", "{410FD578-746C-4828-A2DC-BD1BB13D6138}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VearacityUnitTests", "VearacityUnitTests\VearacityUnitTests.csproj", "{D56FB4A8-6958-4DD9-926E-911D3EBCFDFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{410FD578-746C-4828-A2DC-BD1BB13D6138} = {410FD578-746C-4828-A2DC-BD1BB13D6138}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{410FD578-746C-4828-A2DC-BD1BB13D6138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{410FD578-746C-4828-A2DC-BD1BB13D6138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{410FD578-746C-4828-A2DC-BD1BB13D6138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56FB4A8-6958-4DD9-926E-911D3EBCFDFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56FB4A8-6958-4DD9-926E-911D3EBCFDFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56FB4A8-6958-4DD9-926E-911D3EBCFDFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56FB4A8-6958-4DD9-926E-911D3EBCFDFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

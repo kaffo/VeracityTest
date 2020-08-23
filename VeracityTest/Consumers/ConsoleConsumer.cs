@@ -5,7 +5,7 @@ using VeracityTest.Data;
 
 namespace VeracityTest.Consumers
 {
-    class ConsoleConsumer : IConsumer
+    public class ConsoleConsumer : IConsumer
     {
         private IDataQueue _dataQueue;
 

@@ -10,7 +10,7 @@ namespace VeracityTest.Consumers
         FILE
     }
 
-    interface IConsumer
+    public interface IConsumer
     {
         void OnItemAdded();
     }

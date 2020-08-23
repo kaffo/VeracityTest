@@ -8,7 +8,7 @@ using VeracityTest.Consumers;
 
 namespace VeracityTest.Producers
 {
-    class FileProducer : IProducer
+    public class FileProducer : IProducer
 {
         private static IDataQueue _dataQueue;
         private static FileInfo _inputFileInfo;

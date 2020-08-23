@@ -6,7 +6,7 @@ using VeracityTest.Data;
 
 namespace VeracityTest.Consumers
 {
-    class FileConsumer : IConsumer
+    public class FileConsumer : IConsumer
     {
         private IDataQueue _dataQueue;
         private FileInfo _outputFile;

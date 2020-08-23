@@ -5,7 +5,7 @@ using VeracityTest.Consumers;
 
 namespace VeracityTest.Data
 {
-    class DataQueueDebug : IDataQueue
+    public class DataQueueDebug : IDataQueue
     {
         public event ItemAddedEventHandler ItemAdded;
 

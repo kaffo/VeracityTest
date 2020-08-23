@@ -5,7 +5,7 @@ using VeracityTest.Consumers;
 
 namespace VeracityTest.Data
 {
-    class DataItem
+    public class DataItem
     {
         private ConsumerType _consumerType;
         private string _payload;

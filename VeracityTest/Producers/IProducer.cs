@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VeracityTest.Producers
 {
-    interface IProducer
+    public interface IProducer
     {
         void StartProducer(int productionDelay);
         void StopProducer();
