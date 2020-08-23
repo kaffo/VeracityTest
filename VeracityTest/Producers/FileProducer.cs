@@ -58,6 +58,9 @@ namespace VeracityTest.Producers
                     } else if (lineType.Equals("file"))
                     {
                         currentType = ConsumerType.FILE;
+                    } else
+                    {
+                        continue;
                     }
 
                     DataItem currentItem = new DataItem(currentType, lineSplit[1]);

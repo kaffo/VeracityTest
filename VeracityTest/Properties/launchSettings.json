@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VeracityTest": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\workspace\\VeracityTest\\CodingTest2020InputStimulus.csv 10000 500"
+    }
+  }
+}

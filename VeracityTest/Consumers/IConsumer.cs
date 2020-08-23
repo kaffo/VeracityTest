@@ -12,5 +12,6 @@ namespace VeracityTest.Consumers
 
     interface IConsumer
     {
+        void OnItemAdded();
     }
 }
