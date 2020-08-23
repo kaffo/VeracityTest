@@ -8,6 +8,6 @@ namespace VeracityTest.Data
     interface IDataQueue
     {
         void RegisterListener(ConsumerType consumerType, IConsumer consumer);
-        bool AddItem();
+        bool AddItem(DataItem item);
     }
 }

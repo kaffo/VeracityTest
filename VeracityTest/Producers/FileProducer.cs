@@ -10,8 +10,8 @@ namespace VeracityTest.Producers
 {
     class FileProducer : IProducer
 {
-        private IDataQueue _dataQueue;
-        private FileInfo _inputFileInfo;
+        private static IDataQueue _dataQueue;
+        private static FileInfo _inputFileInfo;
 
         private Thread _producerThread;
         private static bool _runThread = true;
@@ -30,6 +30,8 @@ namespace VeracityTest.Producers
         private static void RunProducer(object obj)
         {
             int delay;
+            StreamReader input = File.OpenText(_inputFileInfo.FullName);
+
             try
             {
                 delay = (int)obj;
@@ -41,6 +43,27 @@ namespace VeracityTest.Producers
 
             while (_runThread)
             {
+                string currentLine = input.ReadLine();
+                if (currentLine != null)
+                {
+                    List<string> lineSplit = new List<string>(currentLine.Split(','));
+
+                    if (lineSplit.Count != 2) { continue; }
+
+                    string lineType = lineSplit[0].ToLower();
+                    ConsumerType currentType = ConsumerType.CONSOLE;
+                    if (lineType.Equals("console"))
+                    {
+                        currentType = ConsumerType.CONSOLE;
+                    } else if (lineType.Equals("file"))
+                    {
+                        currentType = ConsumerType.FILE;
+                    }
+
+                    DataItem currentItem = new DataItem(currentType, lineSplit[1]);
+                    _dataQueue.AddItem(currentItem);
+                }
+
                 Thread.Sleep(delay);
             }
             Thread.Sleep(0);
